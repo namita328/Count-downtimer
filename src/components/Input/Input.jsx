@@ -72,7 +72,7 @@ const Input = ({ targetDate, setTargetDate }) => {
 
   const maxDate = new Date();
   maxDate.setDate(maxDate.getDate() + 99);
-  const maxDateString = maxDate.toISOString().split("T")[0];
+  const maxDateString = maxDate.toISOString().slice(0, 16);
 
   return (
     <>
@@ -87,7 +87,7 @@ const Input = ({ targetDate, setTargetDate }) => {
         </h1>
         <div className={styles.inputDate}>
           <input
-            type="date"
+            type="datetime-local"
             className={styles.targetDate}
             value={targetDate}
             onChange={(e) => setTargetDate(e.target.value)}
