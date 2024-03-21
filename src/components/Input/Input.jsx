@@ -47,6 +47,11 @@ const Input = ({ targetDate, setTargetDate }) => {
     return () => clearInterval(intervalId);
   }, [targetDate, timerActive]);
 
+  useEffect(() => {
+    console.log("settimerover");
+    setTimerOver(false);
+  }, [targetDate]);
+
   const handleTimerToggle = () => {
     if (timerActive) {
       setTimerActive(false);
