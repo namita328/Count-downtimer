@@ -87,7 +87,7 @@ const Input = ({ targetDate, setTargetDate }) => {
         </h1>
         <div className={styles.inputDate}>
           <input
-            type="datetime-local"
+            type="date"
             className={styles.targetDate}
             value={targetDate}
             onChange={(e) => setTargetDate(e.target.value)}
