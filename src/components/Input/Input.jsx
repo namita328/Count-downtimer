@@ -70,12 +70,13 @@ const Input = ({ targetDate, setTargetDate }) => {
     }
   };
 
+  const maxDate = new Date();
+  maxDate.setDate(maxDate.getDate() + 99);
+  const maxDateString = maxDate.toISOString().split("T")[0];
+
   return (
     <>
       <div className={styles.container}>
-        {/* <div className={styles.hourImage}>
-          <img src={BlackHourGlass} alt="Hourglass" />
-        </div> */}
         <img
           src={BlackHourGlass}
           alt="Hourglass"
@@ -90,6 +91,7 @@ const Input = ({ targetDate, setTargetDate }) => {
             className={styles.targetDate}
             value={targetDate}
             onChange={(e) => setTargetDate(e.target.value)}
+            max={maxDateString}
           />
         </div>
         <button
